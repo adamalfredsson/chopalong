@@ -11,6 +11,8 @@ export const handler = async (event: any, context: any) => {
   }
 
   const params = querystring.parse(event.body);
+  console.log({ params });
+
   const email = params.email.toString();
 
   await saveInGoogleSheets(email);
