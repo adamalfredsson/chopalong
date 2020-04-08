@@ -4,16 +4,14 @@ import axios from 'axios';
 const { GOOGLE_SCRIPT_URL, SLACK_WEBHOOK_URL } = process.env;
 
 export const handler = async (event: any, context: any) => {
-  console.log({ event, context });
-
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  const params = querystring.parse(event.body);
-  console.log({ params });
+  const body = JSON.parse(event.body);
+  console.log(body);
 
-  const email = params.email.toString();
+  const email = body.email;
 
   await saveInGoogleSheets(email);
   await sendSlackMessage(email);
