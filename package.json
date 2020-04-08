@@ -1,40 +1,24 @@
 {
   "name": "chopalong",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.34",
-    "@types/react": "^16.9.32",
-    "@types/react-dom": "^16.9.6",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "styled-components": "^5.1.0",
-    "typescript": "^3.7.5"
+  "version": "1.0.0",
+  "description": "Chopalong",
+  "main": "index.js",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "prettier": "^2.0.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "concurrently \"cd frontend && npm run build\" \"cd functions && npm run build\"",
+    "postinstall": "cd frontend && npm install"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nomadoda/chopalong.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nomadoda/chopalong/issues"
   },
-  "devDependencies": {
-    "@types/styled-components": "^5.0.1"
-  }
+  "homepage": "https://github.com/nomadoda/chopalong#readme"
 }
