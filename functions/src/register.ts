@@ -4,6 +4,8 @@ import axios from 'axios';
 const { GOOGLE_SCRIPT_URL, SLACK_WEBHOOK_URL } = process.env;
 
 export const handler = async (event: any, context: any) => {
+  console.log({ event, context });
+
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
