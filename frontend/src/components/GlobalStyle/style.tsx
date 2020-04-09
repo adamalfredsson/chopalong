@@ -3,7 +3,7 @@ import { viewports } from '../../utils/constants/viewports';
 
 export const StyledGlobalStyles = createGlobalStyle`
   body {
-    padding-top: 0;
+    padding: 0;
   }
 
   *,
@@ -17,6 +17,13 @@ export const StyledGlobalStyles = createGlobalStyle`
   input {
     font-family: var(--font);
     line-height: 2rem;
+    &:disabled {
+      background-color: var(--color-accent);
+    }
+  }
+
+  main, footer {
+    width: 100%;
   }
 
   @media ${viewports.mobile} {

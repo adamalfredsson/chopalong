@@ -5,7 +5,7 @@ import { viewports } from '../../utils/constants/viewports';
 
 export const StyledHero = styled.section`
   color: var(--color-text-secondary);
-  background-image: url(${hero});
+  background: var(--color) url(${hero});
   background-size: cover;
   main {
     height: 100%;

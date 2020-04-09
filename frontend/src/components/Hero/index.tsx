@@ -53,10 +53,16 @@ export const Hero: React.FC = () => {
                 placeholder="johanna@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                disabled={isFormSubmitted}
               />
             </label>
             {isFormSubmitted ? (
-              <p className="thanks">Tack! 🥳</p>
+              <p className="thanks">
+                Tack!{' '}
+                <span role="img" aria-label="Yay!">
+                  🥳
+                </span>
+              </p>
             ) : (
               <button type="submit" disabled={isLoading}>
                 Skicka!
