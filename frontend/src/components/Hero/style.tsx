@@ -41,7 +41,7 @@ export const StyledHero = styled.section`
           margin-right: 32px;
           margin-bottom: 0;
           min-width: 260px;
-          width: 40%;
+          width: 60%;
           input {
             width: 100%;
             margin-bottom: 0;
@@ -50,6 +50,10 @@ export const StyledHero = styled.section`
         button {
           margin: 0;
           margin-top: 8px;
+        }
+        .thanks {
+          font-size: 1.5em;
+          margin: 0;
         }
       }
     }
