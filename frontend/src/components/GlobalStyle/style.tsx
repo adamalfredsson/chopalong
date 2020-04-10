@@ -26,11 +26,4 @@ export const StyledGlobalStyles = createGlobalStyle`
   main, footer {
     width: 100%;
   }
-
-
-  @media ${viewports.mobile} {
-    html {
-      font-size: 14px;
-    }
-  }
 `;
