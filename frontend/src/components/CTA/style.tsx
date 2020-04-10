@@ -5,6 +5,10 @@ export const StyledCTA = styled.section`
   background-color: var(--color);
   color: var(--color-text-secondary);
 
+  p {
+    max-width: 750px;
+  }
+
   button {
     background-color: var(--color-secondary);
     border-color: var(--color-secondary);

@@ -7,11 +7,15 @@ export const StyledCard = styled.aside<Props>`
   position: relative;
   background-color: #fff;
   color: var(--color-text);
-  box-shadow: 0 0 4px var(--color-accent);
   border: none;
   overflow: hidden;
   z-index: 1;
   padding: 0;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 2px 4px 12px 4px var(--color-shadow);
+  }
 
   i {
     margin-right: 8px;
@@ -26,6 +30,7 @@ export const StyledCard = styled.aside<Props>`
     background-color: #000;
     filter: blur(1px);
     overflow: hidden;
+    z-index: -1;
     &:after {
       content: '';
       position: absolute;
@@ -34,10 +39,10 @@ export const StyledCard = styled.aside<Props>`
       width: 100%;
       height: 100%;
       opacity: 0.7;
-      background: var(--color-text) url(${(props) => props.imageUrl});
+      background-color: var(--color-text);
+      background-image: url(${(props) => props.imageUrl});
       background-size: cover;
     }
-    z-index: -1;
   }
 
   .header {

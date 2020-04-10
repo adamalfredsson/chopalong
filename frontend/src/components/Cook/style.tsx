@@ -26,6 +26,9 @@ export const StyledCook = styled.section`
       flex: 1;
       min-width: 280px;
       margin: 0 16px;
+      p {
+        max-width: 750px;
+      }
     }
   }
 `;

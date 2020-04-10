@@ -9,7 +9,7 @@
   --color-bg-secondary: #ffa8a8;
   --color-secondary: #00b4cc;
   --color-secondary-accent: #920de90b;
-  --color-shadow: #f4f4f4;
+  --color-shadow: #8b484852;
   --color-text: #444;
   --color-text-secondary: #fff;
   --font: 'Fredoka One', BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
@@ -88,7 +88,7 @@ section aside {
 }
 
 section aside:hover {
-  box-shadow: var(--box-shadow) var(--color-bg-secondary);
+  box-shadow: var(--box-shadow) var(--color-secondary);
 }
 
 section aside img {

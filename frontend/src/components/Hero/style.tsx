@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import hero from '../../assets/img/hero.jpg';
 import { StyledDevice } from '../Device/style';
-import { viewports } from '../../utils/constants/viewports';
+import { viewports } from '../../utils/constants/mediaQueries';
 
 export const StyledHero = styled.section`
   color: var(--color-text-secondary);
