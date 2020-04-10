@@ -9,6 +9,26 @@ export const Cookalongs: React.FC = ({ children, ...props }) => {
       <div className="cards">
         <div className="card-group">
           <Card
+            chef="sofias_veganska"
+            recipe="Solrosburgare"
+            imageUrl="https://source.unsplash.com/VA7WfV-OFsM/320x240"
+            price={80}
+            time="17:30 (45m)"
+            participants={6}
+            participantsLeft={1}
+            maxRating={true}
+          ></Card>
+          <Card
+            chef="Nina"
+            recipe="Italiensk pizza"
+            imageUrl="https://source.unsplash.com/HPZs4EXRFSU/320x240"
+            price={90}
+            time="18:00 (90m)"
+            participants={13}
+          ></Card>
+        </div>
+        <div className="card-group">
+          <Card
             chef="isabellaskök"
             recipe="Pumpasoppa"
             imageUrl="https://source.unsplash.com/w6ftFbPCs9I/320x240"
@@ -25,26 +45,6 @@ export const Cookalongs: React.FC = ({ children, ...props }) => {
             time="19:00 (60m)"
             participants={20}
             participantsLeft={3}
-          ></Card>
-        </div>
-        <div className="card-group">
-          <Card
-            chef="Nina"
-            recipe="Italiensk pizza"
-            imageUrl="https://source.unsplash.com/HPZs4EXRFSU/320x240"
-            price={90}
-            time="18:00 (90m)"
-            participants={13}
-          ></Card>
-          <Card
-            chef="sofias_veganska"
-            recipe="Solrosburgare"
-            imageUrl="https://source.unsplash.com/VA7WfV-OFsM/320x240"
-            price={80}
-            time="17:30 (45m)"
-            participants={6}
-            participantsLeft={1}
-            maxRating={true}
           ></Card>
         </div>
       </div>
