@@ -15,12 +15,15 @@ export const Cook: React.FC = ({ children, ...props }) => {
           </i>
           <article>
             <h3>Välj cookalong</h3>
-            <p>Vad är du sugen på ikväll? På Chopalong lagar du mat tillsammans med en kock - över internet!</p>
+            <p>
+              Dejt-night i karantän eller kul kväll med kompisar? På Chopalong lagar du mat tillsammans med en kock -
+              över internet!
+            </p>
             <p>
               Använd appen för att hitta en nivå, en rätt och en kock som passar dig. Här finns cookalongs för såväl
               kökskatastrofer som blyga matlagningsentusiaster.
             </p>
-            <p>Dejt-night i karantän eller kul kväll med kompisar?</p>
+            <p>Vad är du sugen på ikväll?</p>
           </article>
         </div>
         <div className="step">
@@ -30,7 +33,7 @@ export const Cook: React.FC = ({ children, ...props }) => {
           <article>
             <h3>Fixa ingredienser</h3>
             <p>Du kan enkelt se vilka matvaror du behöver för den cookalong du bokat.</p>
-            <p>Inhandla det du inte hittar i ditt skafferi och ha allt nära till hands när det är dags.</p>
+            <p>Inhandla det du inte hittar i ditt skafferi och ha allt nära till hands när det börjar.</p>
           </article>
         </div>
         <div className="step">
