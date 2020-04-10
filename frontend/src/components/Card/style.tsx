@@ -58,7 +58,9 @@ export const StyledCard = styled.aside<Props>`
     padding: 12px;
     color: var(--color-secondary);
     .rating {
+      margin-top: 8px;
       color: var(--color);
+      font-size: 1.2em;
     }
     .participants {
       .participants-left {

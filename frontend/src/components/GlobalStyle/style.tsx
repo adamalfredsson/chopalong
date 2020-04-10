@@ -26,6 +26,7 @@ export const StyledGlobalStyles = createGlobalStyle`
     width: 100%;
   }
 
+
   @media ${viewports.mobile} {
     html {
       font-size: 14px;
