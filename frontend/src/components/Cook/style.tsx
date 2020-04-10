@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { viewports } from '../../utils/constants/mediaQueries';
 
 export const StyledCook = styled.section`
   padding: 20px 0;
@@ -29,6 +30,12 @@ export const StyledCook = styled.section`
       p {
         max-width: 750px;
       }
+    }
+  }
+  @media ${viewports.mobile} {
+    text-align: center;
+    .step {
+      justify-content: center;
     }
   }
 `;

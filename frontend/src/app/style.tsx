@@ -5,8 +5,4 @@ export const StyledApp = styled.div`
   ${StyledHero} {
     min-height: 90vh;
   }
-  .cookalongs {
-  }
-  .cook {
-  }
 `;

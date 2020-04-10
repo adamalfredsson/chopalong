@@ -4,6 +4,7 @@ import { viewports } from '../../utils/constants/mediaQueries';
 export const StyledGlobalStyles = createGlobalStyle`
   body {
     padding: 0;
+    overflow-x: hidden;
   }
 
   *,
