@@ -35,6 +35,7 @@ export const StyledCard = styled.aside<Props>`
       height: 100%;
       opacity: 0.7;
       background: var(--color-text) url(${(props) => props.imageUrl});
+      background-size: cover;
     }
     z-index: -1;
   }

@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
               {error ? <p>{error}</p> : <p>Bli först med att använda:</p>}
               <input
                 type="email"
-                placeholder="johanna@gmail.com"
+                placeholder="johanna@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={isFormSubmitted}
