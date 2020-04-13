@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { viewports } from '../../utils/constants/mediaQueries';
 
 export const StyledGlobalStyles = createGlobalStyle`
   body {

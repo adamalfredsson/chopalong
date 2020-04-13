@@ -1,36 +1,17 @@
-import React, { useState, FormEvent } from 'react';
-import { StyledHero } from './style';
-import { Device } from '../Device';
+import React, { FormEvent } from 'react';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 import frame from '../../assets/img/frame.jpg';
-import axios from 'axios';
+import { useSignupForm } from '../../utils/forms/useSignupForm';
+import { Device } from '../Device';
+import { StyledHero } from './style';
+import TagManager from 'react-gtm-module';
 
 export const Hero: React.FC = () => {
-  const [error, setError] = useState<null | string>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [email, setEmail] = useState<string>('');
+  const { error, loading, success, handleSubmit, handleInputChange, values } = useSignupForm();
 
-  const endpoint = process.env.REACT_APP_API_URL! + '/signup';
-
-  const onFormSubmit = async (event: FormEvent) => {
-    event.preventDefault();
-    if (!isFormSubmitted) {
-      setIsLoading(true);
-      try {
-        await sendSignupRequest();
-        setIsFormSubmitted(true);
-      } catch (e) {
-        setError('Något gick snett, försök igen!');
-      } finally {
-        setIsLoading(false);
-      }
-    }
-  };
-
-  const sendSignupRequest = async () => {
-    console.log('SIGN UP', email);
-    return axios.post(endpoint, { email });
+  const onFormSubmit = (event: FormEvent) => {
+    TagManager.dataLayer({ dataLayer: { event: 'interaction', category: 'signup', action: 'submit', label: 'hero' } });
+    handleSubmit(event);
   };
 
   return (
@@ -47,16 +28,17 @@ export const Hero: React.FC = () => {
 
           <form onSubmit={onFormSubmit}>
             <label>
-              {error ? <p>{error}</p> : <p>Bli först med att använda:</p>}
+              {error ? <p>Något gick snett, försök igen!</p> : <p>Bli först med att använda:</p>}
               <input
                 type="email"
+                name="email"
                 placeholder="louise@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={isFormSubmitted}
+                value={values.email}
+                onChange={handleInputChange}
+                disabled={success || false}
               />
             </label>
-            {isFormSubmitted ? (
+            {success ? (
               <p className="thanks">
                 Tack!{' '}
                 <span role="img" aria-label="Yay!">
@@ -64,7 +46,7 @@ export const Hero: React.FC = () => {
                 </span>
               </p>
             ) : (
-              <button type="submit" disabled={isLoading}>
+              <button type="submit" disabled={loading}>
                 Skicka!
               </button>
             )}

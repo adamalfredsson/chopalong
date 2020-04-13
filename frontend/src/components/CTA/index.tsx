@@ -1,33 +1,14 @@
-import React, { useState, FormEvent } from 'react';
+import React, { FormEvent } from 'react';
+import { useSignupForm } from '../../utils/forms/useSignupForm';
 import { StyledCTA } from './style';
-import axios from 'axios';
+import TagManager from 'react-gtm-module';
 
 export const CTA: React.FC = ({ children, ...props }) => {
-  const [error, setError] = useState<null | string>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [email, setEmail] = useState<string>('');
+  const { error, loading, success, handleSubmit, handleInputChange, values } = useSignupForm();
 
-  const endpoint = process.env.REACT_APP_API_URL! + '/signup';
-
-  const onFormSubmit = async (event: FormEvent) => {
-    event.preventDefault();
-    if (!isFormSubmitted) {
-      setIsLoading(true);
-      try {
-        await sendSignupRequest();
-        setIsFormSubmitted(true);
-      } catch (e) {
-        setError('Något gick snett, försök igen!');
-      } finally {
-        setIsLoading(false);
-      }
-    }
-  };
-
-  const sendSignupRequest = async () => {
-    console.log('SIGN UP', email);
-    return axios.post(endpoint, { email });
+  const onFormSubmit = (event: FormEvent) => {
+    TagManager.dataLayer({ dataLayer: { event: 'interaction', category: 'signup', action: 'submit', label: 'hero' } });
+    handleSubmit(event);
   };
 
   return (
@@ -41,16 +22,17 @@ export const CTA: React.FC = ({ children, ...props }) => {
 
         <form onSubmit={onFormSubmit}>
           <label>
-            {error && <p>{error}</p>}
+            {error && <p>Något gick snett, försök igen!</p>}
             <input
               type="email"
+              name="email"
               placeholder="louise@example.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              disabled={isFormSubmitted}
+              value={values.email}
+              onChange={handleInputChange}
+              disabled={success || false}
             />
           </label>
-          {isFormSubmitted ? (
+          {success ? (
             <p className="thanks">
               Tack!{' '}
               <span role="img" aria-label="Yay!">
@@ -58,7 +40,7 @@ export const CTA: React.FC = ({ children, ...props }) => {
               </span>
             </p>
           ) : (
-            <button type="submit" disabled={isLoading}>
+            <button type="submit" disabled={loading}>
               Skicka!
             </button>
           )}
