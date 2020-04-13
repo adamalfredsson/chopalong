@@ -44,7 +44,7 @@ export const CTA: React.FC = ({ children, ...props }) => {
             {error && <p>{error}</p>}
             <input
               type="email"
-              placeholder="johanna@example.com"
+              placeholder="louise@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={isFormSubmitted}

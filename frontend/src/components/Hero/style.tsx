@@ -20,9 +20,6 @@ export const StyledHero = styled.section`
           height: 2rem;
         }
       }
-      button {
-        margin: 0;
-      }
     }
     article {
       width: 60%;

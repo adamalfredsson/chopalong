@@ -26,4 +26,8 @@ export const StyledGlobalStyles = createGlobalStyle`
   main, footer {
     width: 100%;
   }
+
+  button {
+    color: var(--color-text-secondary);
+  }
 `;

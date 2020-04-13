@@ -4,6 +4,11 @@ import { App } from './app';
 import * as serviceWorker from './serviceWorker';
 import './styles/_mvp.css';
 import './styles/_device.css';
+import TagManager from 'react-gtm-module';
+
+TagManager.initialize({
+  gtmId: process.env.REACT_APP_GTM!,
+});
 
 ReactDOM.render(
   <React.StrictMode>
