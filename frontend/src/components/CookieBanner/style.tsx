@@ -30,6 +30,8 @@ export const StyledCookieBanner = styled.aside<{ shouldFadeOut: boolean; transit
   button {
     margin: 0;
     padding: 0.4rem 1rem;
+    background-color: var(--color);
+    border-color: var(--color);
   }
   @media ${viewports.mobile} {
     bottom: 8px;

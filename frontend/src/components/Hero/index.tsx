@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
                 </span>
               </p>
             ) : (
-              <button type="submit" disabled={loading}>
+              <button type="submit" disabled={false}>
                 Skicka!
               </button>
             )}

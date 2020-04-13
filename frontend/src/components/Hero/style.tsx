@@ -10,10 +10,6 @@ export const StyledHero = styled.section`
   main {
     height: 100%;
     position: relative;
-    button {
-      background-color: var(--color-secondary);
-      border-color: var(--color-secondary);
-    }
     nav {
       h1 {
         svg {

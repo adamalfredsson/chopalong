@@ -9,11 +9,6 @@ export const StyledCTA = styled.section`
     max-width: 750px;
   }
 
-  button {
-    background-color: var(--color-secondary);
-    border-color: var(--color-secondary);
-  }
-
   h2 {
     margin-top: 0;
   }

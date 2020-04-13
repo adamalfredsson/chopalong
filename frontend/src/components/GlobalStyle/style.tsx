@@ -27,6 +27,13 @@ export const StyledGlobalStyles = createGlobalStyle`
   }
 
   button {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
     color: var(--color-text-secondary);
+    &:disabled {
+      background-color: var(--color-disabled);
+      border-color: var(--color-disabled);
+      filter: none;
+    }
   }
 `;
